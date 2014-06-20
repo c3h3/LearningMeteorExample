@@ -1,0 +1,8 @@
+template(name="postItem")
+	div.postItem
+		div.post-content
+			h3
+				a(href="{{url}}") {{title}}
+				span {{domain}}
+
+				a.discuss.btn(href="{{pathFor 'postPage' ABC}}") Discuss

@@ -1,0 +1,9 @@
+template(name="layout")
+	.container
+		header.navbar
+			.navbar-inner
+				a.brand(href="{{pathFor 'postsList'}}") Microscope / Diff pageTitle = {{pageTitle}}
+
+		div#main.row-fluid
+			+yield
+			
