@@ -2,7 +2,6 @@
   "packages": {
     "jade": {},
     "iron-router": {},
-    "spin": {},
-    "accounts-ui-bootstrap-dropdown": {}
+    "spin": {}
   }
 }
