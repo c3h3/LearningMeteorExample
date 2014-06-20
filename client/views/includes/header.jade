@@ -9,10 +9,13 @@ template(name="header")
 			a.brand(href="{{pathFor 'postsList'}}") Microscope
 
 			div.nav-collapse.collapse
+				ul.nav
+					li
+						a(href="{{pathFor 'postSubmit'}}") New
 				ul.nav.pull-right
 					li
 						+loginButtons
 
-					
+
 
 
