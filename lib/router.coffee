@@ -11,4 +11,11 @@ Router.map ->
 	@route "postSubmit", {path:"/submit"}
 
 
+requireLogin = (pause) -> 
+	if !Meteor.user()
+		@render "accessDenied"
+		pause()
+
+
 Router.onBeforeAction "loading"
+Router.onBeforeAction requireLogin, {only: "postSubmit"}
