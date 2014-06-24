@@ -10,8 +10,9 @@ template(name="header")
 
 			div.nav-collapse.collapse
 				ul.nav
-					li
-						a(href="{{pathFor 'postSubmit'}}") New
+					if currentUser
+						li
+							a(href="{{pathFor 'postSubmit'}}") New
 				ul.nav.pull-right
 					li
 						+loginButtons
