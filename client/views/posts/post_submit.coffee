@@ -15,7 +15,8 @@ Template.postSubmit.events
 				alert error.reason
 
 			#Router.go "postPage", {_id:id}
-			Router.go "postsList"
+		
+		Router.go "postsList"
 
 
 

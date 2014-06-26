@@ -19,8 +19,8 @@ Meteor.methods
 
 		post = _.extend _.pick(postAttributes,"url", "title", "message"),
 			title: postAttributes.title + if @isSimulation then '(client)' else '(server)'
-			userIf: user._id
-			author: user.username
+			userId: user._id
+			author: user.profile.name
 			submitted: new Date().getTime()
 
 		if not @isSimulation
@@ -30,6 +30,7 @@ Meteor.methods
 			Meteor.setTimeout (-> future.return()), 5*1000
 			future.wait()
 
+		console.log post
 
 		postId = Posts.insert post
 

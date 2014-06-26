@@ -1,8 +1,16 @@
 template(name="postItem")
-	div.postItem
+	div.post
 		div.post-content
 			h3
 				a(href="{{url}}") {{title}}
 				span {{domain}}
+			
+			p userId = {{userId}}
+			p MuserId = {{MuserId}}
 
-				a.discuss.btn(href="{{pathFor 'postPage' ABC}}") Discuss
+			p submitted by {{author}}
+				if ownPost
+					a.btn(href="{{pathFor 'postEdit'}}") Edit
+
+			
+		a.discuss.btn(href="{{pathFor 'postPage' ABC}}") Discuss
