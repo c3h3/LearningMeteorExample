@@ -3,6 +3,15 @@
 #@Posts.allow
 #	insert: (userId, doc) -> !! userIds
 
+@Posts.allow
+	update: ownsDocument
+  	remove: ownsDocument
+
+@Posts.deny
+	update: (userId, post, fieldNames) ->
+		_.without(fieldNames, "url", "title") > 0
+
+
 Meteor.methods
 	post: (postAttributes) ->
 		user = Meteor.user()

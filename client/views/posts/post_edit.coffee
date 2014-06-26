@@ -13,6 +13,7 @@ Template.postEdit.events
 				alert error.reason
 
 			else
+				alert "edit successfully"
 				Router.go "postPage", {_id: currentPostId}
 
 
@@ -24,6 +25,6 @@ Template.postEdit.events
 			Posts.remove currentPostId
 			Router.go "postsList"
 
-		
+
 
 
